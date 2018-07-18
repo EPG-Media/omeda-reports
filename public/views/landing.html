@@ -47,12 +47,13 @@
       <label for="owner">Owner</label>
       <input type="text" name="owner" ng-model="lc.query.trackID">
     </div>
+    <!-- submit button -->
     <div class="control_panel-button-container">
       <button type="button" name="button" ng-click="lc.sendQuery(lc.query)" class="btn-active" ng-if="lc.button_status === 'button_active'">Search</button>
-      <button type="button" name="button" ng-click="lc.sendQuery(lc.query)" class="btn-inactive" ng-if="lc.button_status === 'button_inactive'"><img src="../assets/images/loader.gif" class="loader"></button>
+      <button type="button" name="button" class="btn-inactive" ng-if="lc.button_status === 'button_inactive'"><img src="../assets/images/loader.gif" class="loader"></button>
     </div>
 
-
+  <!-- end control panel container -->
   </section>
 
 
