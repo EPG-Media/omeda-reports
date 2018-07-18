@@ -5,6 +5,14 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
+const omedaApi = require('omeda-api-client')({
+  brandKey: 'EPG Media Central Database', // your Omeda brand/db name
+  clientKey: 'client_yourclient', // your Omeda client id
+  appId: '1d381ff5-ba0b-47ce-8730-ce91b05f7b54', // your API app-id to access the brand
+  inputId: 'XXXXXXX', // the API input-id to write data to the db
+  useStaging: false, // default, switch to true to access the staging db
+});
+const brand = omedaApi.resources.brand;
 
 // defining server side routes
 // const form_one = require('./server/routes/form-one/form-one.route.js');
@@ -20,6 +28,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
+
+// omeda API call (need keys to un comment)
+// brand.lookup().then().catch()
+
 
 // server side routes
 // app.use('/form_one', form_one);

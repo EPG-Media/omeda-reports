@@ -6,9 +6,16 @@ myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$lo
 
   const self = this;
 
-  self.message = "Angular working"
+  self.button_status = 'button_active';
 
+  self.date = new Date().toLocaleDateString();
+  self.organization = 'EPG Media';
+  self.brand = 'EPG Media Central Database';
 
+  self.sendQuery = (query) => {
+    self.button_status = 'button_inactive';
+    console.log(query);
+  }
 
 
 

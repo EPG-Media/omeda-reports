@@ -1,4 +1,60 @@
 
-<section>
-  <h1>angular sourced {{lc.message}}</h1>
+<section class="flex-main-container">
+  <!-- header -->
+  <header class="flex-header-container">
+    <a href="https://epgmediallc.com/"><img ng-src="./assets/images/logo2.png"></a>
+    <div>
+      <h5>{{lc.brand}}</h5>
+      <h6>{{lc.date}}</h6>
+    </div>
+  </header>
+
+  <!-- control panel -->
+  <section class="flex-control_panel-container">
+    <!-- organization -->
+    <div class="control_panel-org-container">
+      <label for="date">Organization</label>
+      <select name="organization" ng-model="lc.query.organization">
+        <option value="EPG Media">{{lc.organization}}</option>
+      </select>
+    </div>
+    <!-- brand -->
+    <div class="control_panel-brand-container">
+      <label for="date">Brand</label>
+      <select name="brand" ng-model="lc.query.brand">
+        <option value="EPG Media">{{lc.brand}}</option>
+      </select>
+    </div>
+    <!-- deployment date -->
+    <div class="control_panel-deploy_date-container">
+      <label for="deploy_date">Deployment Date</label>
+      <select name="deploy_date" ng-model="lc.query.deployment_date">
+        <option value="EPG Media">Today ({{lc.date}})</option>
+      </select>
+    </div>
+    <!-- name containe -->
+    <div class="control_panel-name_contains-container">
+      <label for="date">Name Contains</label>
+      <input type="text" name="name_contains" ng-model="lc.query.name_contains">
+    </div>
+    <!-- trackID -->
+    <div class="control_panel-trackID-container">
+      <label for="trackID">TrackID</label>
+      <input type="text" name="trackID" ng-model="lc.query.trackID">
+    </div>
+    <!-- owner -->
+    <div class="control_panel-owner-container">
+      <label for="owner">Owner</label>
+      <input type="text" name="owner" ng-model="lc.query.trackID">
+    </div>
+    <div class="control_panel-button-container">
+      <button type="button" name="button" ng-click="lc.sendQuery(lc.query)" class="btn-active" ng-if="lc.button_status === 'button_active'">Search</button>
+      <button type="button" name="button" ng-click="lc.sendQuery(lc.query)" class="btn-inactive" ng-if="lc.button_status === 'button_inactive'"><img src="../assets/images/loader.gif" class="loader"></button>
+    </div>
+
+
+  </section>
+
+
+<!-- end main container -->
 </section>

@@ -5,7 +5,7 @@
 * {
   padding: 0px;
   margin: 0px;
-  font: 13px;
+  font: 12px;
   font-family: serif sans-serif;
 }
 body {
@@ -15,4 +15,84 @@ body {
 main {
   height: 100vh;
   width: 100vw;
+}
+
+/* main container */
+.flex-main-container {
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  align-items: center;
+}
+
+/* header */
+.flex-main-container .flex-header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 13vh;
+  width: 100vw;
+  background-color: #277bc1;
+  border-bottom: 2px solid #000000;
+}
+.flex-header-container img {
+  flex: 1;
+  text-align: left;
+  height: 11vh;
+  margin: 5px 0px 0px 20px;
+}
+.flex-header-container div {
+  flex: 1;
+  text-align: right;
+  font-size: 1.3em;
+  color: #ffffff;
+  margin: 5px 20px 0px 0px;
+}
+
+/* control panel */
+.flex-control_panel-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: 20px 0px;
+}
+.flex-control_panel-container div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  margin: 0px 15px;
+}
+.flex-control_panel-container label {
+  font-size: 1.5em;
+}
+.flex-control_panel-container select, input {
+  height: 6vh;
+  width: 10vw;
+  font-size: 16px;
+}
+.flex-control_panel-container .btn-active {
+  font-size: 1.5em;
+  color: #ffffff;
+  height: 8vh;
+  width: 15vw;
+  border-radius: 10px;
+  background-color: #005eff;
+  outline: none;
+}
+.flex-control_panel-container .btn-active:hover {
+  cursor: pointer;
+}
+.flex-control_panel-container .btn-inactive {
+  font-size: 1.5em;
+  color: #ffffff;
+  height: 8vh;
+  width: 15vw;
+  border-radius: 10px;
+  background-color: #6996ee;
+  outline: none;
+}
+.flex-control_panel-container .loader {
+  height: 8vh;
 }

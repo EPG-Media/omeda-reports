@@ -6,12 +6,13 @@ myApp.factory('EmailFactory',['$http', '$window', '$location', 'alertify',functi
   // defining alertify options
   alertify.logPosition('top right');
 
+  
 
 
 
 //public API
   return {
-  
+
   };
 
 
