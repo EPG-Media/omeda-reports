@@ -68,7 +68,7 @@ main {
   font-size: 1.5em;
 }
 .flex-control_panel-container select, input {
-  height: 6vh;
+  height: 4vh;
   width: 10vw;
   font-size: 16px;
   border-radius: 5px;
@@ -76,7 +76,7 @@ main {
 .flex-control_panel-container .btn-active {
   font-size: 1.5em;
   color: #ffffff;
-  height: 8vh;
+  height: 5vh;
   width: 15vw;
   border-radius: 10px;
   background-color: #005eff;
@@ -88,12 +88,12 @@ main {
 .flex-control_panel-container .btn-inactive {
   font-size: 1.5em;
   color: #ffffff;
-  height: 8vh;
+  height: 5vh;
   width: 15vw;
   border-radius: 10px;
   background-color: #6996ee;
   outline: none;
 }
 .flex-control_panel-container .loader {
-  height: 8vh;
+  height: 4vh;
 }
