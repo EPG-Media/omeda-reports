@@ -97,3 +97,18 @@ main {
 .flex-control_panel-container .loader {
   height: 4vh;
 }
+
+/* data container */
+.flex-main-container .flex-data-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+}
+.flex-data-container table {
+  width: 90vw;
+}
+.flex-data-container td {
+  border: 1px solid #000000;
+  margin: 0px;
+  padding: 0px;
+}

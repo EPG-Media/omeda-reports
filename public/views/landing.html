@@ -54,15 +54,10 @@
     </div>
   <!-- end control panel container -->
   </section>
+
   <!-- data container -->
-  <section>
+  <section class="flex-data-container">
     <table>
-      <tr>
-        <td>Deployment</td>
-        <td>Send Performance</td>
-        <td>Inbox Activity</td>
-        <td>Clicks</td>
-      </tr>
       <tr>
         <td>Brand</td>
         <td>Type</td>
@@ -71,7 +66,7 @@
         <td>Headline</td>
         <td>Deployed</td>
         <td>Recieved</td>
-        <td>Bounce%</td>  
+        <td>Bounce%</td>
         <td>Opens</td>
         <td>Unique Opens</td>
         <td>Open Rate</td>
@@ -80,8 +75,28 @@
         <td>Click to Open Rate</td>
         <td>CTR%</td>
       </tr>
+      <tr ng-repeat="response in lc.API_response">
+        <td>{{response.brand}}</td>
+        <td>{{response.type}}</td>
+        <td>{{response.campaign}}</td>
+        <td>{{response.date}}</td>
+        <td>{{response.headline}}</td>
+        <td>{{response.deployed}}</td>
+        <td>{{response.recieved}}</td>
+        <td>{{response.bounce}}</td>
+        <td>{{response.opens}}</td>
+        <td>{{response.unique_opens}}</td>
+        <td>{{response.open_rate}}</td>
+        <td>{{response.clicks}}</td>
+        <td>{{response.unique_clicks}}</td>
+        <td>{{response.click_to_open}}</td>
+        <td>{{response.ctr}}</td>
+      </tr>
     </table>
+  <!-- end data container   -->
   </section>
+
+
 
 <!-- end main container -->
 </section>
