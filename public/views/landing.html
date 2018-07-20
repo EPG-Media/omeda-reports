@@ -13,29 +13,29 @@
   <section class="flex-control_panel-container">
     <!-- organization -->
     <div class="control_panel-org-container">
-      <label for="date">Organization</label>
-      <select name="organization" ng-model="lc.query.organization">
+      <label for="organization">Organization</label>
+      <select name="organization" ng-model="lc.query.organization" ng-class="organization">
         <option value="EPG Media">{{lc.organization}}</option>
       </select>
     </div>
     <!-- brand -->
     <div class="control_panel-brand-container">
-      <label for="date">Brand</label>
-      <select name="brand" ng-model="lc.query.brand">
+      <label for="brand">Brand</label>
+      <select name="brand" ng-model="lc.query.brand" ng-class="brand">
         <option value="EPG Media Central Database">{{lc.brand}}</option>
       </select>
     </div>
     <!-- users -->
     <div class="control_panel-brand-container">
-      <label for="date">User</label>
-      <select name="User" ng-model="lc.query.user">
+      <label for="user">User</label>
+      <select name="user" ng-model="lc.query.user" ng-class="user">
         <option ng-repeat="user in lc.users" value="{{user.user_email}}">{{user.username}}</option>
       </select>
     </div>
     <!-- deployment date -->
     <div class="control_panel-deploy_date-container">
       <label for="deploy_date">Deployment Date</label>
-      <select name="deploy_date" ng-model="lc.query.deployment_date">
+      <select name="deploy_date" ng-model="lc.query.deployment_date" ng-class="deployment_date">
         <option value="{{lc.date}}">Today ({{lc.date}})</option>
         <option value="{{lc.one_week_back}}">Last 7 days (since {{lc.one_week_back}})</option>
         <option value="{{lc.two_week_back}}">Last 14 days (since {{lc.two_week_back}})</option>
@@ -45,18 +45,18 @@
     </div>
     <!-- name containe -->
     <div class="control_panel-name_contains-container">
-      <label for="date">Name Contains</label>
-      <input type="text" name="name_contains" ng-model="lc.query.name_contains">
+      <label for="name_contains">Name Contains</label>
+      <input type="text" name="name_contains" ng-model="lc.query.name_contains" ng-class="name_contains">
     </div>
     <!-- trackID -->
     <div class="control_panel-trackID-container">
       <label for="trackID">TrackID</label>
-      <input type="text" name="trackID" ng-model="lc.query.trackID">
+      <input type="text" name="trackID" ng-model="lc.query.trackID" ng-class="trackID">
     </div>
     <!-- owner -->
     <div class="control_panel-owner-container">
       <label for="owner">Owner</label>
-      <input type="text" name="owner" ng-model="lc.query.owner">
+      <input type="text" name="owner" ng-model="lc.query.owner" ng-class="owner">
     </div>
     <!-- submit button -->
     <div class="control_panel-button-container">
@@ -114,6 +114,8 @@
   </section>
 
 
-
+  <footer>
+    <h5>&#169; 2018 EPG Media LLC</h5>
+  </footer>
 <!-- end main container -->
 </section>

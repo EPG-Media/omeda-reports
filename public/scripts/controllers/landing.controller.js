@@ -2,7 +2,7 @@
 // app contains error checking logic for former employer 1 and highschool diploma
 // uncoment to use (both front and backend)
 
-myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$location', '$http', function(EmailFactory, alertify, $scope, $location, $http) {
+myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$http', function(EmailFactory, alertify, $scope, $http) {
 
   // defining this
   const self = this;
@@ -19,14 +19,17 @@ myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$lo
   self.organization = 'EPG Media';
   self.brand = 'EPG Media Central Database';
 
+  // define query(need for error logging)
+  self.query = {};
+
   // setting dynamic dates for select
   let today = new Date();
   self.one_week_back = today.setDate(today.getDate() - 7);
   self.two_week_back = today.setDate(today.getDate() - 14);
   self.three_week_back = today.setDate(today.getDate() - 21);
   self.thirty_week_back = today.setDate(today.getDate() - 30);
-  console.log(today);
 
+  // dummy user data
   self.users = [
     {
       username: 'Bernadette Wohlman',
@@ -48,11 +51,9 @@ myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$lo
       username: 'Mary Jo Temei',
       user_email: 'mtomei@epgmediallc.com'
     }
-  ]
+  ];
 
-
-
-  // dummy data
+  // dummy api data
   self.API_response = [
     {
       brand: 'BI',
@@ -158,15 +159,45 @@ myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$lo
     }
   ];
 
+  // removes error css
+  function error_reset() {
+    $scope.organization = 'error_reset';
+    $scope.brand = 'error_reset';
+    $scope.user = 'error_reset';
+    $scope.deployment_date = 'error_reset';
+    $scope.name_contains = 'error_reset';
+    $scope.trackID = 'error_reset';
+    $scope.organization = 'owner';
+  }
+
   // makes query call to API
   self.sendQuery = (query) => {
-    self.button_status = 'button_inactive';
+    error_reset();
     console.log(query);
+    if(query.organization === null || query.organization === '' || query.organization === undefined) {
+      $scope.organization = 'error';
+    } else if(query.brand === null || query.brand === '' || query.brand === undefined) {
+      $scope.brand = 'error';
+    } else if(query.user === null || query.user === '' || query.user === undefined) {
+      $scope.user = 'error';
+    } else if(query.deployment_date === null || query.deployment_date === '' || query.deployment_date === undefined) {
+      $scope.deployment_date = 'error';
+    } else if(query.name_contains === null || query.name_contains === '' || query.name_contains === undefined) {
+      $scope.name_contains = 'error';
+    } else if(query.trackID === null || query.trackID === '' || query.trackID === undefined) {
+      $scope.trackID = 'error';
+    } else if(query.owner === null || query.owner === '' || query.owner === undefined) {
+      $scope.owner = 'error';
+    } else {
+      self.button_status = 'button_inactive';
+      alertify.log('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating report </h4></span>');
+    }
   };
 
   // exports data to excel
   self.export = (API_response) => {
     self.excel_button_status = 'button_inactive';
+    alertify.log('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating export </h4></span>');
     $http({
       method: 'POST',
       url: '/excel_export',

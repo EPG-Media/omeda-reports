@@ -1,7 +1,5 @@
 
-/*////////////// */
-/*/    RESET     */
-/*////////////// */
+/* reset */
 * {
   padding: 0px;
   margin: 0px;
@@ -22,15 +20,24 @@ main {
   font-size: 0.7em;
 }
 
+.error {
+  /* background-color: rgb(222, 69, 69); */
+  border: 2px solid red;
+}
+.error_reset {
+  background-color: none;
+}
+
 /* tooltip img */
 .tooltip_span {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 15vw;
 }
 .tooltip_img {
-  height: 10vh;
+  height: 6vh;
 }
 
 /* main container */
@@ -77,6 +84,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
   align-items: baseline;
   margin: 0px 15px;
 }
@@ -134,8 +142,6 @@ main {
 }
 .flex-data-container td {
   border: 1px solid #000000;
-  margin: 0px;
-  padding: 0px;
 }
 
 /* export container */
@@ -153,6 +159,7 @@ main {
   background-color: #2fa83a;
   color: #ffffff;
   outline: none;
+  font-size: 1.1em;
 }
 .flex-export-container .btn_excel-active:hover {
   cursor: pointer;
@@ -165,7 +172,25 @@ main {
   color: #ffffff;
   outline: none;
 }
-
 .flex-export-container img {
   height: 4vh;
+}
+
+/* footer */
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 3vh;
+  width: 100vw;
+  background-color: #277bc1;
+  border-top: 2px solid #000000;
+  color: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+footer h5 {
+  margin-left: 20px;
 }
