@@ -1,5 +1,7 @@
 
 // requiring dependancies
+DotEnv = require('dotenv-node');
+new DotEnv();
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -15,7 +17,7 @@ const omedaApi = require('omeda-api-client')({
 const brand = omedaApi.resources.brand;
 
 // defining server side routes
-// const form_one = require('./server/routes/form-one/form-one.route.js');
+const excel_export = require('./server/routes/excel-export.route.js');
 
 // server back static files
 app.use(express.static(path.join(__dirname, './public')));
@@ -34,7 +36,14 @@ app.get('/', (req, res) => {
 
 
 // server side routes
-// app.use('/form_one', form_one);
+app.use('/excel_export', excel_export);
+
+
+
+
+
+
+
 
 
 // port listening

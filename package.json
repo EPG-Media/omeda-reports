@@ -16,6 +16,7 @@
     "angular-tooltips": "1.2.2",
     "body-parser": "1.17.1",
     "dotenv-node": "0.0.2",
+    "export-to-excel": "^0.2.1",
     "express": "4.15.2",
     "nodemailer": "4.4.2",
     "nodemailer-smtp-transport": "2.7.4",

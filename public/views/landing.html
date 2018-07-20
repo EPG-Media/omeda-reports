@@ -22,14 +22,25 @@
     <div class="control_panel-brand-container">
       <label for="date">Brand</label>
       <select name="brand" ng-model="lc.query.brand">
-        <option value="EPG Media">{{lc.brand}}</option>
+        <option value="EPG Media Central Database">{{lc.brand}}</option>
+      </select>
+    </div>
+    <!-- users -->
+    <div class="control_panel-brand-container">
+      <label for="date">User</label>
+      <select name="User" ng-model="lc.query.user">
+        <option ng-repeat="user in lc.users" value="{{user.user_email}}">{{user.username}}</option>
       </select>
     </div>
     <!-- deployment date -->
     <div class="control_panel-deploy_date-container">
       <label for="deploy_date">Deployment Date</label>
       <select name="deploy_date" ng-model="lc.query.deployment_date">
-        <option value="EPG Media">Today ({{lc.date}})</option>
+        <option value="{{lc.date}}">Today ({{lc.date}})</option>
+        <option value="{{lc.one_week_back}}">Last 7 days (since {{lc.one_week_back}})</option>
+        <option value="{{lc.two_week_back}}">Last 14 days (since {{lc.two_week_back}})</option>
+        <option value="{{lc.three_week_back}}">Last 21 days (since {{lc.three_week_back}})</option>
+        <option value="{{lc.thirty_week_back}}">Last 30 days (since {{lc.thirty_week_back}})</option>
       </select>
     </div>
     <!-- name containe -->
@@ -58,24 +69,24 @@
   <!-- data container -->
   <section class="flex-data-container">
     <table>
-      <tr>
-        <td>Brand</td>
-        <td>Type</td>
-        <td>Campaign</td>
-        <td>Date</td>
-        <td>Headline</td>
-        <td>Deployed</td>
-        <td>Recieved</td>
-        <td>Bounce%</td>
-        <td>Opens</td>
-        <td>Unique Opens</td>
-        <td>Open Rate</td>
-        <td>Clicks</td>
-        <td>Unique Clicks</td>
-        <td>Click to Open Rate</td>
-        <td>CTR%</td>
+      <tr class="heading_row">
+        <td>Brand<a class="icon_info"tooltips tooltip-template="Magazine title">&#9432;</a></td>
+        <td>Type<a class="icon_info"tooltips tooltip-template="How item in being mailed out">&#9432;</a></td>
+        <td>Campaign<a class="icon_info"tooltips tooltip-template="Type of content ">&#9432;</a></td>
+        <td>Date<a class="icon_info"tooltips tooltip-template="Date of mailing">&#9432;</a></td>
+        <td>Headline<a class="icon_info"tooltips tooltip-template="Mailing headline">&#9432;</a></td>
+        <td>Deployed<a class="icon_info"tooltips tooltip-template="How many mails were sent">&#9432;</a></td>
+        <td>Recieved<a class="icon_info"tooltips tooltip-template="How many mailings were recieved">&#9432;</a></td>
+        <td>Bounce%<a class="icon_info"tooltips tooltip-template="Bounce %">&#9432;</a></td>
+        <td>Opens<a class="icon_info"tooltips tooltip-template="How many of the mailings were opened">&#9432;</a></td>
+        <td>Unique Opens<a class="icon_info"tooltips tooltip-template="Unique openings">&#9432;</a></td>
+        <td>Open Rate<a class="icon_info"tooltips tooltip-template="Open rate">&#9432;</a></td>
+        <td>Clicks<a class="icon_info"tooltips tooltip-template="Clicks">&#9432;</a></td>
+        <td>Unique Clicks<a class="icon_info"tooltips tooltip-template="Unique clicks">&#9432;</a></td>
+        <td>Click to Open Rate<a class="icon_info"tooltips tooltip-template="Click to open rate">&#9432;</a></td>
+        <td>CTR%<a class="icon_info"tooltips tooltip-template="CTR %">&#9432;</a></td>
       </tr>
-      <tr ng-repeat="response in lc.API_response">
+      <tr ng-repeat="response in lc.API_response" class="highlight_row">
         <td>{{response.brand}}</td>
         <td>{{response.type}}</td>
         <td>{{response.campaign}}</td>
@@ -98,7 +109,8 @@
 
   <!-- export container -->
   <section class="flex-export-container">
-    <button type="button" name="export_to_excel"> Export ot Excel</button>
+    <button ng-if="lc.excel_button_status === 'button_active'" type="button" name="export_to_excel" class="btn_excel-active" ng-click="lc.export(lc.API_response)">Export to Excel</button>
+    <button ng-if="lc.excel_button_status === 'button_inactive'" type="button" name="export_to_excel" class="btn_excel-inactive"><img src="./assets/images/loader.gif"></button>
   </section>
 
 
