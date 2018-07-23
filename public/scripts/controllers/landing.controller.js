@@ -2,7 +2,10 @@
 // app contains error checking logic for former employer 1 and highschool diploma
 // uncoment to use (both front and backend)
 
-myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$http', function(EmailFactory, alertify, $scope, $http) {
+myApp.controller('LandingController',['alertify', '$scope', '$http', function(alertify, $scope, $http) {
+
+  // notification that controller sourced, working and running
+  console.log('Landing Controller Running...');
 
   // defining this
   const self = this;
@@ -20,7 +23,7 @@ myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$ht
   self.organization = 'EPG Media';
   self.brand = 'EPG Media Central Database';
 
-  // define query(need for error logging)
+  // define query(needed for error logging)
   self.query = {};
 
   // setting dynamic dates for select
