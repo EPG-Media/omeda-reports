@@ -22,6 +22,15 @@
     margin: 0px;
   }
 
+  /* init message */
+  .init-message {
+    margin-bottom: 60px;
+  }
+  .init-message img {
+    height: 20vh;
+  }
+
+
   /* control panel */
   .flex-control_panel-container {
     flex-direction: column;

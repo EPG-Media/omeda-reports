@@ -79,6 +79,8 @@ main {
   justify-content: center;
   align-content: center;
   margin: 20px 0px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #bbbbbb;
 }
 .flex-control_panel-container div {
   display: flex;
@@ -120,6 +122,22 @@ main {
 }
 .flex-control_panel-container .loader {
   height: 4vh;
+}
+
+/* init message */
+.flex-main-container .init-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.init-message p {
+  font-size: 1.1em;
+  margin-top: 30px;
+}
+.init-message img {
+  margin-top: 50px;
+  height: 30vh;
 }
 
 /* data container */

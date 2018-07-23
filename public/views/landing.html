@@ -66,56 +66,66 @@
   <!-- end control panel container -->
   </section>
 
-  <!-- data container -->
-  <section class="flex-data-container">
-    <table>
-      <tr class="heading_row">
-        <td>Brand<a class="icon_info"tooltips tooltip-template="Magazine title">&#9432;</a></td>
-        <td>Type<a class="icon_info"tooltips tooltip-template="How item in being mailed out">&#9432;</a></td>
-        <td>Campaign<a class="icon_info"tooltips tooltip-template="Type of content ">&#9432;</a></td>
-        <td>Date<a class="icon_info"tooltips tooltip-template="Date of mailing">&#9432;</a></td>
-        <td>Headline<a class="icon_info"tooltips tooltip-template="Mailing headline">&#9432;</a></td>
-        <td>Deployed<a class="icon_info"tooltips tooltip-template="How many mails were sent">&#9432;</a></td>
-        <td>Recieved<a class="icon_info"tooltips tooltip-template="How many mailings were recieved">&#9432;</a></td>
-        <td>Bounce%<a class="icon_info"tooltips tooltip-template="Bounce %">&#9432;</a></td>
-        <td>Opens<a class="icon_info"tooltips tooltip-template="How many of the mailings were opened">&#9432;</a></td>
-        <td>Unique Opens<a class="icon_info"tooltips tooltip-template="Unique openings">&#9432;</a></td>
-        <td>Open Rate<a class="icon_info"tooltips tooltip-template="Open rate">&#9432;</a></td>
-        <td>Clicks<a class="icon_info"tooltips tooltip-template="Clicks">&#9432;</a></td>
-        <td>Unique Clicks<a class="icon_info"tooltips tooltip-template="Unique clicks">&#9432;</a></td>
-        <td>Click to Open Rate<a class="icon_info"tooltips tooltip-template="Click to open rate">&#9432;</a></td>
-        <td>CTR%<a class="icon_info"tooltips tooltip-template="CTR %">&#9432;</a></td>
-      </tr>
-      <tr ng-repeat="response in lc.API_response" class="highlight_row">
-        <td>{{response.brand}}</td>
-        <td>{{response.type}}</td>
-        <td>{{response.campaign}}</td>
-        <td>{{response.date}}</td>
-        <td>{{response.headline}}</td>
-        <td>{{response.deployed}}</td>
-        <td>{{response.recieved}}</td>
-        <td>{{response.bounce}}</td>
-        <td>{{response.opens}}</td>
-        <td>{{response.unique_opens}}</td>
-        <td>{{response.open_rate}}</td>
-        <td>{{response.clicks}}</td>
-        <td>{{response.unique_clicks}}</td>
-        <td>{{response.click_to_open}}</td>
-        <td>{{response.ctr}}</td>
-      </tr>
-    </table>
-  <!-- end data container   -->
+  <!-- displays on init and when lc.query is null -->
+  <section ng-if="lc.data_container === 'inactive'" class="init-message">
+    <p><em>Showing no results...</em></p>
+    <img ng-src="./assets/images/favicon.ico">
   </section>
 
-  <!-- export container -->
-  <section class="flex-export-container">
-    <button ng-if="lc.excel_button_status === 'button_active'" type="button" name="export_to_excel" class="btn_excel-active" ng-click="lc.export(lc.API_response)">Export to Excel</button>
-    <button ng-if="lc.excel_button_status === 'button_inactive'" type="button" name="export_to_excel" class="btn_excel-inactive"><img src="./assets/images/loader.gif"></button>
+  <!-- container shows when lc.query is not NULL -->
+  <section ng-if="lc.data_container === 'active'">
+    <!-- data container -->
+    <section class="flex-data-container">
+      <table>
+        <tr class="heading_row">
+          <td>Brand<a class="icon_info"tooltips tooltip-template="Magazine title">&#9432;</a></td>
+          <td>Type<a class="icon_info"tooltips tooltip-template="How item in being mailed out">&#9432;</a></td>
+          <td>Campaign<a class="icon_info"tooltips tooltip-template="Type of content ">&#9432;</a></td>
+          <td>Date<a class="icon_info"tooltips tooltip-template="Date of mailing">&#9432;</a></td>
+          <td>Headline<a class="icon_info"tooltips tooltip-template="Mailing headline">&#9432;</a></td>
+          <td>Deployed<a class="icon_info"tooltips tooltip-template="How many mails were sent">&#9432;</a></td>
+          <td>Recieved<a class="icon_info"tooltips tooltip-template="How many mailings were recieved">&#9432;</a></td>
+          <td>Bounce%<a class="icon_info"tooltips tooltip-template="Bounce %">&#9432;</a></td>
+          <td>Opens<a class="icon_info"tooltips tooltip-template="How many of the mailings were opened">&#9432;</a></td>
+          <td>Unique Opens<a class="icon_info"tooltips tooltip-template="Unique openings">&#9432;</a></td>
+          <td>Open Rate<a class="icon_info"tooltips tooltip-template="Open rate">&#9432;</a></td>
+          <td>Clicks<a class="icon_info"tooltips tooltip-template="Clicks">&#9432;</a></td>
+          <td>Unique Clicks<a class="icon_info"tooltips tooltip-template="Unique clicks">&#9432;</a></td>
+          <td>Click to Open Rate<a class="icon_info"tooltips tooltip-template="Click to open rate">&#9432;</a></td>
+          <td>CTR%<a class="icon_info"tooltips tooltip-template="CTR %">&#9432;</a></td>
+        </tr>
+        <tr ng-repeat="response in lc.API_response" class="highlight_row">
+          <td>{{response.brand}}</td>
+          <td>{{response.type}}</td>
+          <td>{{response.campaign}}</td>
+          <td>{{response.date}}</td>
+          <td>{{response.headline}}</td>
+          <td>{{response.deployed}}</td>
+          <td>{{response.recieved}}</td>
+          <td>{{response.bounce}}</td>
+          <td>{{response.opens}}</td>
+          <td>{{response.unique_opens}}</td>
+          <td>{{response.open_rate}}</td>
+          <td>{{response.clicks}}</td>
+          <td>{{response.unique_clicks}}</td>
+          <td>{{response.click_to_open}}</td>
+          <td>{{response.ctr}}</td>
+        </tr>
+      </table>
+    </section>
+    <!-- export container -->
+    <section class="flex-export-container">
+      <button ng-if="lc.excel_button_status === 'button_active'" type="button" name="export_to_excel" class="btn_excel-active" ng-click="lc.export(lc.API_response)">Export to Excel</button>
+      <button ng-if="lc.excel_button_status === 'button_inactive'" type="button" name="export_to_excel" class="btn_excel-inactive"><img src="./assets/images/loader.gif"></button>
+    </section>
+    <!-- end lc.query data container -->
   </section>
 
-
+<!-- footer container -->
   <footer>
     <h5>&#169; 2018 EPG Media LLC</h5>
   </footer>
+
+
 <!-- end main container -->
 </section>

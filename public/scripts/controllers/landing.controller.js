@@ -11,6 +11,7 @@ myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$ht
   alertify.logPosition('bottom right');
 
   // setting init button status
+  self.data_container = 'inactive'
   self.button_status = 'button_active';
   self.excel_button_status = 'button_active';
 
@@ -189,6 +190,7 @@ myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$ht
     } else if(query.owner === null || query.owner === '' || query.owner === undefined) {
       $scope.owner = 'error';
     } else {
+      self.data_container = 'active'
       self.button_status = 'button_inactive';
       alertify.log('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating report </h4></span>');
     }
