@@ -160,6 +160,9 @@ myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$ht
     }
   ];
 
+  // displays number of obects in the respinse array
+  self.API_response_total = self.API_response.length;
+
   // removes error css
   function error_reset() {
     $scope.organization = 'error_reset';
@@ -177,23 +180,46 @@ myApp.controller('LandingController',['EmailFactory', 'alertify', '$scope', '$ht
     console.log(query);
     if(query.organization === null || query.organization === '' || query.organization === undefined) {
       $scope.organization = 'error';
+      alertify.alert("Please select an ORGANIZATION");
     } else if(query.brand === null || query.brand === '' || query.brand === undefined) {
       $scope.brand = 'error';
+      alertify.alert("Please select a BRAND");
     } else if(query.user === null || query.user === '' || query.user === undefined) {
       $scope.user = 'error';
+      alertify.alert("Please select a USER");
     } else if(query.deployment_date === null || query.deployment_date === '' || query.deployment_date === undefined) {
       $scope.deployment_date = 'error';
+      alertify.alert("Please select an DEPLOYMENT date/date range");
     } else if(query.name_contains === null || query.name_contains === '' || query.name_contains === undefined) {
       $scope.name_contains = 'error';
+      alertify.alert("Please add a CONTAINS NAME");
     } else if(query.trackID === null || query.trackID === '' || query.trackID === undefined) {
       $scope.trackID = 'error';
+      alertify.alert("Please enter a TRACKID identifier");
     } else if(query.owner === null || query.owner === '' || query.owner === undefined) {
       $scope.owner = 'error';
+      alertify.alert("Please select an OWNER");
     } else {
       self.data_container = 'active'
       self.button_status = 'button_inactive';
       alertify.log('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating report </h4></span>');
+      // $http({
+      //   method: 'GET',
+      //   url: '/api',
+      //   headers: {
+      //     query : query
+      //   }
+      // }).then(function(response) {
+      //   alertify.success('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>SUCCESS - Showing query details/response</h4></span>');
+      //   self.button_status = 'button_active';
+      // }).catch(function(error) {
+      //   alertify.alert("ERROR - connecting with API");
+      //   self.button_status = 'button_active';
+      //   console.log('ERROR connecting with api', error);
+      // });
+    // end if else
     }
+  // end sendQuery function
   };
 
   // exports data to excel

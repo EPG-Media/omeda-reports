@@ -143,8 +143,13 @@ main {
 /* data container */
 .flex-main-container .flex-data-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 50px;
+}
+.flex-data-container p {
+  margin: 10px 0px;
+  font-size: 1.1em;
+
 }
 .flex-data-container table {
   width: 90vw;
