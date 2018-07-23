@@ -61,7 +61,7 @@ main {
 .flex-header-container img {
   flex: 1;
   text-align: left;
-  height: 11vh;
+  height: 8vh;
   margin: 5px 0px 0px 20px;
 }
 .flex-header-container div {
@@ -136,8 +136,8 @@ main {
   margin-top: 30px;
 }
 .init-message img {
+  height: 28vh;
   margin-top: 50px;
-  height: 30vh;
 }
 
 /* data container */
