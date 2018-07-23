@@ -1,4 +1,5 @@
 
+<!-- main container -->
 <section class="flex-main-container">
   <!-- header -->
   <header class="flex-header-container">
@@ -43,7 +44,7 @@
         <option value="{{lc.thirty_week_back}}">Last 30 days (since {{lc.thirty_week_back}})</option>
       </select>
     </div>
-    <!-- name containe -->
+    <!-- name contains -->
     <div class="control_panel-name_contains-container">
       <label for="name_contains">Name Contains</label>
       <input type="text" name="name_contains" ng-model="lc.query.name_contains" ng-class="name_contains">
@@ -79,21 +80,21 @@
       <p><em>Showing {{lc.API_response_total}} results...</em></p>
       <table>
         <tr class="heading_row">
-          <td>Brand<a class="icon_info">&#9432;</a></td>
-          <td>Type<a class="icon_info"tooltips tooltip-template="How item in being mailed out">&#9432;</a></td>
-          <td>Campaign<a class="icon_info"tooltips tooltip-template="Type of content ">&#9432;</a></td>
-          <td>Date<a class="icon_info"tooltips tooltip-template="Date of mailing">&#9432;</a></td>
-          <td>Headline<a class="icon_info"tooltips tooltip-template="Mailing headline">&#9432;</a></td>
-          <td>Deployed<a class="icon_info"tooltips tooltip-template="How many mails were sent">&#9432;</a></td>
-          <td>Recieved<a class="icon_info"tooltips tooltip-template="How many mailings were recieved">&#9432;</a></td>
-          <td>Bounce%<a class="icon_info"tooltips tooltip-template="Bounce %">&#9432;</a></td>
-          <td>Opens<a class="icon_info"tooltips tooltip-template="How many of the mailings were opened">&#9432;</a></td>
-          <td>Unique Opens<a class="icon_info"tooltips tooltip-template="Unique openings">&#9432;</a></td>
-          <td>Open Rate<a class="icon_info"tooltips tooltip-template="Open rate">&#9432;</a></td>
-          <td>Clicks<a class="icon_info"tooltips tooltip-template="Clicks">&#9432;</a></td>
-          <td>Unique Clicks<a class="icon_info"tooltips tooltip-template="Unique clicks">&#9432;</a></td>
-          <td>Click to Open Rate<a class="icon_info"tooltips tooltip-template="Click to open rate">&#9432;</a></td>
-          <td>CTR%<a class="icon_info"tooltips tooltip-template="CTR %">&#9432;</a></td>
+          <td>Brand<a class="icon_info" tooltips tooltip-template="Magazine title">&#9432;</a></td>
+          <td>Type<a class="icon_info" tooltips tooltip-template="How item in being mailed out">&#9432;</a></td>
+          <td>Campaign<a class="icon_info" tooltips tooltip-template="Type of content ">&#9432;</a></td>
+          <td>Date<a class="icon_info" tooltips tooltip-template="Date of mailing">&#9432;</a></td>
+          <td>Headline<a class="icon_info" tooltips tooltip-template="Mailing headline">&#9432;</a></td>
+          <td>Deployed<a class="icon_info" tooltips tooltip-template="How many mails were sent">&#9432;</a></td>
+          <td>Recieved<a class="icon_info" tooltips tooltip-template="How many mailings were recieved">&#9432;</a></td>
+          <td>Bounce%<a class="icon_info" tooltips tooltip-template="Bounce %">&#9432;</a></td>
+          <td>Opens<a class="icon_info" tooltips tooltip-template="How many of the mailings were opened">&#9432;</a></td>
+          <td>Unique Opens<a class="icon_info" tooltips tooltip-template="Unique openings">&#9432;</a></td>
+          <td>Open Rate<a class="icon_info" tooltips tooltip-template="Open rate">&#9432;</a></td>
+          <td>Clicks<a class="icon_info" tooltips tooltip-template="Clicks">&#9432;</a></td>
+          <td>Unique Clicks<a class="icon_info" tooltips tooltip-template="Unique clicks">&#9432;</a></td>
+          <td>Click to Open Rate<a class="icon_info" tooltips tooltip-template="Click to open rate">&#9432;</a></td>
+          <td>CTR%<a class="icon_info" tooltips tooltip-template="CTR %">&#9432;</a></td>
         </tr>
         <tr ng-repeat="response in lc.API_response" class="highlight_row">
           <td>{{response.brand}}</td>
@@ -119,10 +120,10 @@
       <button ng-if="lc.excel_button_status === 'button_active'" type="button" name="export_to_excel" class="btn_excel-active" ng-click="lc.export(lc.API_response)">Export to Excel</button>
       <button ng-if="lc.excel_button_status === 'button_inactive'" type="button" name="export_to_excel" class="btn_excel-inactive"><img src="./assets/images/loader.gif"></button>
     </section>
-    <!-- end lc.query data container -->
+  <!-- end lc.query data container -->
   </section>
 
-<!-- footer container -->
+  <!-- footer container -->
   <footer>
     <h5>&#169; 2018 EPG Media LLC</h5>
   </footer>
