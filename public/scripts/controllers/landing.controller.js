@@ -35,26 +35,19 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
 
   // dummy user data
   self.users = [
-    {
-      username: 'Bernadette Wohlman',
-      user_email: 'bwohlman@epgmediallc.com'
-    },
-    {
-      username: 'Chris Stanton',
-      user_email: 'cstanton@epgmediallc.com'
-    },
-    {
-      username: 'Karen Kalinyak',
-      user_email: 'kkalinyak@epgmediallc.com'
-    },
-    {
-      username: 'Kathy Johnson',
-      user_email: 'Kathy.Johnson@Boatingindustry.com'
-    },
-    {
-      username: 'Mary Jo Temei',
-      user_email: 'mtomei@epgmediallc.com'
-    }
+    {username: 'Bernadette Wohlman',user_email: 'bwohlman@epgmediallc.com'},
+    {username: 'Bruce Kostic',user_email: 'bkostic@epgmediallc.com'},
+    {username: 'Christopher Pelikan',user_email: 'cpelikan@boatingindustry.com'},
+    {username: 'Chris Stanton',user_email: 'cstanton@epgmediallc.com'},
+    {username: 'Karen Kalinyak',user_email: 'kkalinyak@epgmediallc.com'},
+    {username: 'Kathy Johnson',user_email: 'Kathy.Johnson@Boatingindustry.com'},
+    {username: 'Mary Jo Temei',user_email: 'mtomei@epgmediallc.com'},
+    {username: 'Dave McMohan',user_email: 'dmcmahon@powersportsbuisness.com'},
+    {username: 'David Voll',user_email: 'dvoll@ridermagazine.com'},
+    {username: 'Debbie Rittenberg',user_email: 'drittenberg@epgmediallc.com'},
+    {username: 'Eric Schroder',user_email: 'eschroder@epgmediallc.com'},
+    {username: 'Greg Drevenstedt',user_email: 'gdrevenstedt@ridermagazine.com'},
+    {username: 'John Kmitta',user_email: 'jkmitta@epgmediallc.com'},
   ];
 
   // dummy api data
