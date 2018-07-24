@@ -1,7 +1,4 @@
 
-// app contains error checking logic for former employer 1 and highschool diploma
-// uncoment to use (both front and backend)
-
 myApp.controller('LandingController',['alertify', '$scope', '$http', function(alertify, $scope, $http) {
 
   // notification that controller sourced, working and running
