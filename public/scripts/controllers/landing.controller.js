@@ -23,7 +23,7 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
   self.organization = 'EPG Media';
   self.brand = 'EPG Media Central Database';
 
-  // define query(needed for error logging)
+  // defining query(needed for error logging)
   self.query = {};
 
   // setting dynamic dates for select
@@ -200,7 +200,6 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
       self.button_status = 'button_inactive';
       alertify.log('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating report </h4></span>');
 
-
       // $http({
       //   method: 'GET',
       //   url: '/api',
@@ -216,7 +215,6 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
       //   console.log('ERROR connecting with api', error);
       // });
 
-      
     // end if else
     }
   // end sendQuery function
