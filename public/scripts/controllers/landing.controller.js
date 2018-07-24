@@ -44,7 +44,7 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
     {username: 'Debbie Rittenberg',user_email: 'drittenberg@epgmediallc.com'},
     {username: 'Eric Schroder',user_email: 'eschroder@epgmediallc.com'},
     {username: 'Greg Drevenstedt',user_email: 'gdrevenstedt@ridermagazine.com'},
-    {username: 'John Kmitta',user_email: 'jkmitta@epgmediallc.com'},
+    {username: 'John Kmitta',user_email: 'jkmitta@epgmediallc.com'}
   ];
 
   // dummy api data
