@@ -12,28 +12,28 @@
 
   <!-- control panel -->
   <section class="flex-control_panel-container">
-    <!-- organization -->
+    <!-- organization container -->
     <div class="control_panel-org-container">
       <label for="organization">Organization</label>
       <select name="organization" ng-model="lc.query.organization" ng-class="organization" placeholder="*required">
         <option value="EPG Media">{{lc.organization}}</option>
       </select>
     </div>
-    <!-- brand -->
+    <!-- brand container -->
     <div class="control_panel-brand-container">
       <label for="brand">Brand</label>
       <select name="brand" ng-model="lc.query.brand" ng-class="brand" placeholder="*required">
         <option value="EPG Media Central Database">{{lc.brand}}</option>
       </select>
     </div>
-    <!-- users -->
+    <!-- users container -->
     <div class="control_panel-brand-container">
       <label for="user">User</label>
       <select name="user" ng-model="lc.query.user" ng-class="user" placeholder="*required">
         <option ng-repeat="user in lc.users" value="{{user.user_email}}">{{user.username}}</option>
       </select>
     </div>
-    <!-- deployment date -->
+    <!-- deployment date container -->
     <div class="control_panel-deploy_date-container">
       <label for="deploy_date">Deployment Date</label>
       <select name="deploy_date" ng-model="lc.query.deployment_date" ng-class="deployment_date" placeholder="*required">
@@ -44,22 +44,22 @@
         <option value="{{lc.thirty_week_back}}">Last 30 days (since {{lc.thirty_week_back}})</option>
       </select>
     </div>
-    <!-- name contains -->
+    <!-- name contains container -->
     <div class="control_panel-name_contains-container">
       <label for="name_contains">Name Contains </label>
       <input type="text" name="name_contains" ng-model="lc.query.name_contains" ng-class="name_contains" placeholder="*required">
     </div>
-    <!-- trackID -->
+    <!-- trackID container -->
     <div class="control_panel-trackID-container">
       <label for="trackID">TrackID</label>
       <input type="text" name="trackID" ng-model="lc.query.trackID" ng-class="trackID" placeholder="*required">
     </div>
-    <!-- owner -->
+    <!-- owner container -->
     <div class="control_panel-owner-container">
       <label for="owner">Owner</label>
       <input type="text" name="owner" ng-model="lc.query.owner" ng-class="owner" placeholder="*required">
     </div>
-    <!-- submit button -->
+    <!-- submit button container -->
     <div class="control_panel-button-container">
       <button type="button" name="button" ng-click="lc.sendQuery(lc.query)" class="btn-active" ng-if="lc.button_status === 'button_active'">Search</button>
       <button type="button" name="button" class="btn-inactive" ng-if="lc.button_status === 'button_inactive'"><img src="../assets/images/loader.gif" class="loader"></button>
@@ -78,6 +78,7 @@
     <section class="flex-data-container">
       <p><em>Showing {{lc.API_response_total}} results...</em></p>
       <table>
+        <!-- table heading container -->
         <tr class="heading_row">
           <td>Brand<a class="icon_info" tooltips tooltip-template="Magazine title">&#9432;</a></td>
           <td>Type<a class="icon_info" tooltips tooltip-template="How item in being mailed out">&#9432;</a></td>
@@ -95,6 +96,7 @@
           <td>Click to Open Rate<a class="icon_info" tooltips tooltip-template="Click to open rate">&#9432;</a></td>
           <td>CTR%<a class="icon_info" tooltips tooltip-template="CTR %">&#9432;</a></td>
         </tr>
+        <!-- data output container -->
         <tr ng-repeat="response in lc.API_response" class="highlight_row">
           <td>{{response.brand}}</td>
           <td>{{response.type}}</td>
