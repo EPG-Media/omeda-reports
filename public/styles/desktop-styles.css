@@ -213,7 +213,26 @@ footer {
   left: 0;
   right: 0;
 }
-footer h5 {
+footer .flex-footer-copyright {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+.flex-footer-copyright h5 {
   margin-left: 20px;
   font-size: 0.8em;
+}
+footer .flex-footer-power {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.flex-footer-power h5 {
+  margin-right: 5px;
+}
+.flex-footer-power img {
+  margin-right: 20px;
+  width: 4vw;
 }
