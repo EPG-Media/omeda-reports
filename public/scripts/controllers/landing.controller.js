@@ -199,6 +199,8 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
       self.data_container = 'active'
       self.button_status = 'button_inactive';
       alertify.log('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating report </h4></span>');
+
+
       // $http({
       //   method: 'GET',
       //   url: '/api',
@@ -213,6 +215,8 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
       //   self.button_status = 'button_active';
       //   console.log('ERROR connecting with api', error);
       // });
+
+      
     // end if else
     }
   // end sendQuery function
