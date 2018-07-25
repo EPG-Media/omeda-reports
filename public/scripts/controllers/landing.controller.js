@@ -213,6 +213,17 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
     $scope.organization = 'owner';
   };
 
+  // error message to select valid options
+  self.error_selection = (deployment_date) => {
+    console.log('deployment_date: ', deployment_date);
+    if (deployment_date === 'null') {
+      alertify.alert("Please select a valid deployment date");
+      self.query.deployment_date = ' ';
+    } else {
+      return
+    }
+  };
+
   // makes query call to API
   self.sendQuery = (query) => {
     error_reset();
