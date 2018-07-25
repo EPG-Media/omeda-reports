@@ -44,7 +44,32 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
     {username: 'Debbie Rittenberg',user_email: 'drittenberg@epgmediallc.com'},
     {username: 'Eric Schroder',user_email: 'eschroder@epgmediallc.com'},
     {username: 'Greg Drevenstedt',user_email: 'gdrevenstedt@ridermagazine.com'},
-    {username: 'John Kmitta',user_email: 'jkmitta@epgmediallc.com'}
+    {username: 'John Kmitta',user_email: 'jkmitta@epgmediallc.com'},
+    {username: 'John Prusak',user_email: 'jprusak@snowgoer.com'},
+    {username: 'Jonathan Sweet',user_email: 'jsweet@boatingindustry.com'},
+    {username: 'Karen Kalinyak',user_email: 'kkalinyak@epgmediallc.com'},
+    {username: 'Kathy Johnson',user_email: 'kjohnson@boatingindustry.com'},
+    {username: 'Leslie Palmer',user_email: 'lpalmer@epgmediallc.com'},
+    {username: 'Marion Minor',user_email: 'mminor@epgmediallc.com'},
+    {username: 'Mark Rosaker',user_email: 'mrosaker@snowgoer.com'},
+    {username: 'Mark Marcon',user_email: 'mmarcon@epgmediallc.com'},
+    {username: 'Mark Tuttle',user_email: 'mtuttle@ridermagazine.com'},
+    {username: 'Melissa Dowling',user_email: 'mdowling@epgmediallc.com'},
+    {username: 'Peggy Tupper',user_email: 'ptupper@epgmediallc.com'},
+    {username: 'Dave Clayton',user_email: 'dclayton@thunderpress.net'},
+    {username: 'Stuart Sutherland',user_email: 'ssutherland@thunderpress.net'},
+    {username: 'Cristy Pazera',user_email: 'cpazera@thunderpress.net'},
+    {username: 'Joanne Juda-Prainito',user_email: 'jjuda-praintino@epgmediallc.com'},
+    {username: 'Marjorie Kleiman',user_email: 'mkleiman@thunderpress.net'},
+    {username: 'Laura Kiesler',user_email: 'lkiesler@ridermagazine.com'},
+    {username: 'Kyle Swartz',user_email: 'kswartz@epgmediallc.com'},
+    {username: 'Rich Alden',user_email: 'ralden@aldensales.com'},
+    {username: 'Dave Campbell',user_email: 'dcampbell@epgmediallc.com'},
+    {username: 'Barbara Reynolds',user_email: 'breynolds@fueloilnews.com'},
+    {username: 'Jeremy Nedelka',user_email: 'jnedelka@epgmediallc.com'},
+    {username: 'Haley Nelson',user_email: 'hnelson@epgmediallc.com'},
+    {username: 'Marybeth Came',user_email: 'mcame@epgmediallc.com'},
+    {username: 'Jimmy Gilligan',user_email: 'jgilligan@powersportsbuisness.com'}
   ];
 
   // dummy api data

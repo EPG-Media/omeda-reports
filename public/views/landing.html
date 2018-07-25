@@ -30,7 +30,7 @@
     <div class="control_panel-brand-container">
       <label for="user">User</label>
       <select name="user" ng-model="lc.query.user" ng-class="user" placeholder="*required">
-        <option ng-repeat="user in lc.users" value="{{user.user_email}}">{{user.username}}</option>
+        <option ng-repeat="user in lc.users" value="{{user.user_email}}">{{user.username}} - {{user.user_email}}</option>
       </select>
     </div>
     <!-- deployment date container -->
