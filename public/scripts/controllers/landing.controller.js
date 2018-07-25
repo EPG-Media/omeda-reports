@@ -231,20 +231,20 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
     console.log(query);
     if(query.organization === null || query.organization === '' || query.organization === undefined) {
       $scope.organization = 'error';
-      alertify.alert("Please select an ORGANIZATION");
+      alertify.alert("<span class='alert_span'><img src='./assets/images/logo2.png'><h4>Please select an ORGANIZATION</h4><span>");
     } else if(query.brand === null || query.brand === '' || query.brand === undefined) {
       $scope.brand = 'error';
-      alertify.alert("Please select a BRAND");
+      alertify.alert("<span class='alert_span'><img src='./assets/images/logo2.png'><h4>Please select a BRAND</h4><span>");
     } else if(query.user === null || query.user === '' || query.user === undefined) {
       $scope.user = 'error';
-      alertify.alert("Please select a USER");
+      alertify.alert("<span class='alert_span'><img src='./assets/images/logo2.png'><h4>Please select a USER</h4><span>");
     } else if(query.deployment_date === 'null' || query.deployment_date === null || query.deployment_date === '' || query.deployment_date === undefined) {
       $scope.deployment_date = 'error';
-      alertify.alert("Please select an DEPLOYMENT date/date range");
+      alertify.alert("<span class='alert_span'><img src='./assets/images/logo2.png'><h4>Please select an DEPLOYMENT date/date range</h4><span>");
     } else {
       self.data_container = 'active'
       self.button_status = 'button_inactive';
-      alertify.log('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating report </h4></span>');
+      alertify.log('<span class="notification_span"><img class="notification_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating report </h4></span>');
 
       // $http({
       //   method: 'GET',
@@ -269,13 +269,13 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
   // exports data to excel
   self.export = (API_response) => {
     self.excel_button_status = 'button_inactive';
-    alertify.log('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating export </h4></span>');
+    alertify.log('<span class="notification_span"><img class="notification_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating export </h4></span>');
     $http({
       method: 'POST',
       url: '/excel_export',
       data: API_response
     }).then(function(response) {
-      alertify.success('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>SUCCESS - Report is being emailed to you</h4></span>');
+      alertify.success('<span class="notification_span"><img class="notification_img" src="./assets/images/logo2.png"><h4>SUCCESS - Report is being emailed to you</h4></span>');
       self.excel_button_status = 'button_active';
     }).catch(function(error) {
       alertify.alert("ERROR - exporting and mailing report. Please try again later");

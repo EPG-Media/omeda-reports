@@ -30,20 +30,28 @@ main {
 
 /* select option background */
 .required {
-  color: #777777;
+  color: #de4b4b;
   margin-left: 2px;
   font-size: .8em;
 }
 
-/* tooltip img */
-.tooltip_span {
+/* alert message */
+.alert_span {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #277bc1;
+}
+
+/* notification message */
+.notification_span {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 15vw;
 }
-.tooltip_img {
+.notification_img {
   height: 6vh;
 }
 
