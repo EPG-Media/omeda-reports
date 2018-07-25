@@ -14,21 +14,21 @@
   <section class="flex-control_panel-container">
     <!-- organization container -->
     <div class="control_panel-org-container">
-      <label for="organization">Organization</label>
+      <span><label for="organization">Organization</label><em class="required">*required</em></span>
       <select name="organization" ng-model="lc.query.organization" ng-class="organization" placeholder="*required">
         <option value="EPG Media">{{lc.organization}}</option>
       </select>
     </div>
     <!-- brand container -->
     <div class="control_panel-brand-container">
-      <label for="brand">Brand</label>
+      <span><label for="brand">Brand</label><em class="required">*required</em></span>
       <select name="brand" ng-model="lc.query.brand" ng-class="brand" placeholder="*required">
         <option value="EPG Media Central Database">{{lc.brand}}</option>
       </select>
     </div>
     <!-- users container -->
     <div class="control_panel-brand-container">
-      <label for="user">User</label>
+      <span><label for="user">User</label><em class="required">*required</em></span>
       <select name="user" ng-model="lc.query.user" ng-class="user" placeholder="*required">
         <option ng-repeat="user in lc.users" value="{{user.user_email}}">{{user.username}} - {{user.user_email}}</option>
       </select>

@@ -29,8 +29,10 @@ main {
 }
 
 /* select option background */
-option {
-  color: #277bc1;
+.required {
+  color: #777777;
+  margin-left: 2px;
+  font-size: .8em;
 }
 
 /* tooltip img */

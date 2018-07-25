@@ -226,15 +226,6 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
     } else if(query.deployment_date === 'null' || query.deployment_date === null || query.deployment_date === '' || query.deployment_date === undefined) {
       $scope.deployment_date = 'error';
       alertify.alert("Please select an DEPLOYMENT date/date range");
-    } else if(query.name_contains === null || query.name_contains === '' || query.name_contains === undefined) {
-      $scope.name_contains = 'error';
-      alertify.alert("Please add a CONTAINS NAME");
-    } else if(query.trackID === null || query.trackID === '' || query.trackID === undefined) {
-      $scope.trackID = 'error';
-      alertify.alert("Please enter a TRACKID identifier");
-    } else if(query.owner === null || query.owner === '' || query.owner === undefined) {
-      $scope.owner = 'error';
-      alertify.alert("Please select an OWNER");
     } else {
       self.data_container = 'active'
       self.button_status = 'button_inactive';
