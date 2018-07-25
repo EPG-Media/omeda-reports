@@ -35,7 +35,7 @@
     </div>
     <!-- deployment date container -->
     <div class="control_panel-deploy_date-container">
-      <label for="deploy_date">Deployment Date</label>
+      <span><label for="deploy_date">Deployment Date</label><em class="required">*required</em></span>
       <select name="deploy_date" ng-model="lc.query.deployment_date" ng-class="deployment_date" placeholder="*required">
         <option value="all">All</option>
         <option value="{{lc.date}}">Today ({{lc.date}})</option>

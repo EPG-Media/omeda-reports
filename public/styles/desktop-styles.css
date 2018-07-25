@@ -37,16 +37,15 @@ main {
 }
 
 /* alert message */
+.alertify {
+  background-color: rgba(0, 0, 0, 0.61);
+}
 .alert_span {
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: #277bc1;
 }
-.alertify {
-  background-color: rgba(0, 0, 0, 0.61);
-}
-
 
 /* notification message */
 .notification_span {
