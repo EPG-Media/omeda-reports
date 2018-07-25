@@ -40,7 +40,7 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
     {username: 'Kathy Johnson',user_email: 'Kathy.Johnson@Boatingindustry.com'},
     {username: 'Mary Jo Temei',user_email: 'mtomei@epgmediallc.com'},
     {username: 'Dave McMohan',user_email: 'dmcmahon@powersportsbuisness.com'},
-    {username: 'David Voll',user_email: 'dvoll@ridermagazine.com'},
+    {username: 'David Voll',user_email: 'dvoll@thunderpress.net'},
     {username: 'Debbie Rittenberg',user_email: 'drittenberg@epgmediallc.com'},
     {username: 'Eric Schroder',user_email: 'eschroder@epgmediallc.com'},
     {username: 'Greg Drevenstedt',user_email: 'gdrevenstedt@ridermagazine.com'},
