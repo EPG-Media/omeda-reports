@@ -24,6 +24,7 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
   self.query = {};
 
   // past deployments
+  self.yesturday = moment().subtract(1, 'day').format('MM/DD/YYYY');
   self.one_week_back = moment().subtract(7, 'day').format('MM/DD/YYYY');
   self.two_week_back = moment().subtract(14, 'day').format('MM/DD/YYYY');
   self.three_week_back = moment().subtract(21, 'day').format('MM/DD/YYYY');
@@ -218,7 +219,7 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
     console.log('deployment_date: ', deployment_date);
     if (deployment_date === 'null') {
       alertify.alert("Please select a valid deployment date");
-      self.query.deployment_date = ' ';
+      self.query.deployment_date = '';
     } else {
       return
     }
