@@ -22,7 +22,8 @@ main {
 
 /* error checking */
 .error {
-  border: 2px solid red;
+  background-color: rgb(226, 85, 85);
+  color: #ffffff;
 }
 .error_reset {
   background-color: none;
@@ -176,8 +177,7 @@ main {
   font-size: 1.2em;
 }
 .flex-data-container .highlight_row:hover {
-  background-color: #00b2ff;
-  color: #ffffff;
+  background-color: #b4adad;
 }
 .flex-data-container td {
   border: 1px solid #000000;

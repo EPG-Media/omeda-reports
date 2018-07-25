@@ -52,6 +52,19 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
   self.month_eleven = moment().subtract(11, 'month').format('MMMM YYYY');
   self.month_twelve = moment().subtract(12, 'month').format('MMMM YYYY');
 
+  self.month_thirteen = moment().subtract(13, 'month').format('MMMM YYYY');
+  self.month_fourteen = moment().subtract(14, 'month').format('MMMM YYYY');
+  self.month_fifteen = moment().subtract(15, 'month').format('MMMM YYYY');
+  self.month_sixteen = moment().subtract(16, 'month').format('MMMM YYYY');
+  self.month_seventeen = moment().subtract(17, 'month').format('MMMM YYYY');
+  self.month_eighteen = moment().subtract(18, 'month').format('MMMM YYYY');
+  self.month_nineteen = moment().subtract(19, 'month').format('MMMM YYYY');
+  self.month_twenty = moment().subtract(20, 'month').format('MMMM YYYY');
+  self.month_twentyone = moment().subtract(21, 'month').format('MMMM YYYY');
+  self.month_twentytwo = moment().subtract(22, 'month').format('MMMM YYYY');
+  self.month_twentythree = moment().subtract(23, 'month').format('MMMM YYYY');
+  self.month_twentyfour = moment().subtract(24, 'month').format('MMMM YYYY');
+
   // dummy user data
   self.users = [
     {username: 'Bernadette Wohlman',user_email: 'bwohlman@epgmediallc.com'},
@@ -212,17 +225,6 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
     $scope.name_contains = 'error_reset';
     $scope.trackID = 'error_reset';
     $scope.organization = 'owner';
-  };
-
-  // error message to select valid options
-  self.error_selection = (deployment_date) => {
-    console.log('deployment_date: ', deployment_date);
-    if (deployment_date === 'null') {
-      alertify.alert("Please select a valid deployment date");
-      self.query.deployment_date = '';
-    } else {
-      return
-    }
   };
 
   // makes query call to API
