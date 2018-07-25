@@ -232,6 +232,7 @@ footer .flex-footer-power {
 .flex-footer-power h5 {
   margin-right: 5px;
   font-family: monospace;
+  font-size: 1em;
 }
 .flex-footer-power img {
   margin-right: 20px;
