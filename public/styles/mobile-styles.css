@@ -25,6 +25,7 @@
   .flex-header-container div {
     text-align: center;
     margin: 0px;
+    font-size: 1.2em;
   }
 
   /* init message */

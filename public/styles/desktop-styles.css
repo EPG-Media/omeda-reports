@@ -83,6 +83,7 @@ main {
   flex: 1;
   text-align: right;
   font-size: 1.3em;
+  text-shadow: 1px 1px 1px #949494;
   color: #ffffff;
   margin: 5px 20px 0px 0px;
 }
@@ -107,6 +108,7 @@ main {
 }
 .flex-control_panel-container label {
   font-size: 1.5em;
+  text-shadow: 1px 1px 1px #b9b9b9;
 }
 .flex-control_panel-container select, input {
   height: 3vh;
