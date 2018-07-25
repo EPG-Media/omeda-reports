@@ -15,11 +15,6 @@ main {
   width: 100vw;
 }
 
-/* info icon */
-.icon_info {
-  font-size: 0.7em;
-}
-
 /* error checking */
 .error {
   background-color: rgb(226, 85, 85);
