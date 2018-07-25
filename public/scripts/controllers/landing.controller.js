@@ -23,12 +23,13 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
   // defining query(needed for error logging)
   self.query = {};
 
-  // setting dynamic dates for select
-  let today = new Date();
-  self.one_week_back = today.setDate(today.getDate() - 7);
-  self.two_week_back = today.setDate(today.getDate() - 14);
-  self.three_week_back = today.setDate(today.getDate() - 21);
-  self.thirty_week_back = today.setDate(today.getDate() - 30);
+  // setting query data outlooks
+  self.one_week_back = moment().subtract(7, 'day').format('MM/DD/YYYY');
+  self.two_week_back = moment().subtract(14, 'day').format('MM/DD/YYYY');
+  self.three_week_back = moment().subtract(21, 'day').format('MM/DD/YYYY');
+  self.thirty_week_back = moment().subtract(30, 'day').format('MM/DD/YYYY');
+  self.this_month = moment().format('MMMM YYYY');
+  self.next_month = moment().add(1, 'month').format('MMMM YYYY');
 
   // dummy user data
   self.users = [
@@ -205,7 +206,7 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
     } else if(query.user === null || query.user === '' || query.user === undefined) {
       $scope.user = 'error';
       alertify.alert("Please select a USER");
-    } else if(query.deployment_date === null || query.deployment_date === '' || query.deployment_date === undefined) {
+    } else if(query.deployment_date === 'null' || query.deployment_date === null || query.deployment_date === '' || query.deployment_date === undefined) {
       $scope.deployment_date = 'error';
       alertify.alert("Please select an DEPLOYMENT date/date range");
     } else if(query.name_contains === null || query.name_contains === '' || query.name_contains === undefined) {
