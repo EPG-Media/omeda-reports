@@ -1,12 +1,17 @@
 
 @media(max-width: 850px) {
 
-  /* tooltips */
-  .tooltip_span {
+  /* notification messages */
+  .notification_span {
     width: 50vw;
   }
-  .tooltip_img {
+  .notification_img {
     height: 4vh;
+  }
+
+  /* main container */
+  .flex-main-container {
+    margin-bottom: 75px;
   }
 
   /* header */
