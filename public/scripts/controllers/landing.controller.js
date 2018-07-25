@@ -28,11 +28,14 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
   self.two_week_back = moment().subtract(14, 'day').format('MM/DD/YYYY');
   self.three_week_back = moment().subtract(21, 'day').format('MM/DD/YYYY');
   self.thirty_week_back = moment().subtract(30, 'day').format('MM/DD/YYYY');
+  self.sixty_week_back = moment().subtract(60, 'day').format('MM/DD/YYYY');
   // future Deployments
   self.one_week_out = moment().add(7, 'day').format('MM/DD/YYYY');
   self.two_week_out = moment().add(14, 'day').format('MM/DD/YYYY');
   self.three_week_out = moment().add(21, 'day').format('MM/DD/YYYY');
   self.thirty_week_out = moment().add(30, 'day').format('MM/DD/YYYY');
+  self.sixty_week_out = moment().add(60, 'day').format('MM/DD/YYYY');
+  self.ninety_week_out = moment().add(90, 'day').format('MM/DD/YYYY');
   // monthly deployments
   self.this_month = moment().format('MMMM YYYY');
   self.month_one = moment().subtract(1, 'month').format('MMMM YYYY');
@@ -208,7 +211,7 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
     $scope.name_contains = 'error_reset';
     $scope.trackID = 'error_reset';
     $scope.organization = 'owner';
-  }
+  };
 
   // makes query call to API
   self.sendQuery = (query) => {
