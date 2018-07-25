@@ -43,6 +43,10 @@ main {
   justify-content: center;
   background-color: #277bc1;
 }
+.alertify {
+  background-color: rgba(0, 0, 0, 0.61);
+}
+
 
 /* notification message */
 .notification_span {
@@ -55,6 +59,16 @@ main {
 .notification_img {
   height: 6vh;
 }
+
+
+
+
+
+
+
+
+
+
 
 /* main container */
 .flex-main-container {

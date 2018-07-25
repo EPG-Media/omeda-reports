@@ -51,7 +51,6 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
   self.month_ten = moment().subtract(10, 'month').format('MMMM YYYY');
   self.month_eleven = moment().subtract(11, 'month').format('MMMM YYYY');
   self.month_twelve = moment().subtract(12, 'month').format('MMMM YYYY');
-
   self.month_thirteen = moment().subtract(13, 'month').format('MMMM YYYY');
   self.month_fourteen = moment().subtract(14, 'month').format('MMMM YYYY');
   self.month_fifteen = moment().subtract(15, 'month').format('MMMM YYYY');
