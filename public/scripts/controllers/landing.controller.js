@@ -23,13 +23,30 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', function(al
   // defining query(needed for error logging)
   self.query = {};
 
-  // setting query data outlooks
+  // past deployments
   self.one_week_back = moment().subtract(7, 'day').format('MM/DD/YYYY');
   self.two_week_back = moment().subtract(14, 'day').format('MM/DD/YYYY');
   self.three_week_back = moment().subtract(21, 'day').format('MM/DD/YYYY');
   self.thirty_week_back = moment().subtract(30, 'day').format('MM/DD/YYYY');
+  // future Deployments
+  self.one_week_out = moment().add(7, 'day').format('MM/DD/YYYY');
+  self.two_week_out = moment().add(14, 'day').format('MM/DD/YYYY');
+  self.three_week_out = moment().add(21, 'day').format('MM/DD/YYYY');
+  self.thirty_week_out = moment().add(30, 'day').format('MM/DD/YYYY');
+  // monthly deployments
   self.this_month = moment().format('MMMM YYYY');
-  self.next_month = moment().add(1, 'month').format('MMMM YYYY');
+  self.month_one = moment().subtract(1, 'month').format('MMMM YYYY');
+  self.month_two = moment().subtract(2, 'month').format('MMMM YYYY');
+  self.month_three = moment().subtract(3, 'month').format('MMMM YYYY');
+  self.month_four = moment().subtract(4, 'month').format('MMMM YYYY');
+  self.month_five = moment().subtract(5, 'month').format('MMMM YYYY');
+  self.month_six = moment().subtract(6, 'month').format('MMMM YYYY');
+  self.month_seven = moment().subtract(7, 'month').format('MMMM YYYY');
+  self.month_eight = moment().subtract(8, 'month').format('MMMM YYYY');
+  self.month_nine = moment().subtract(9, 'month').format('MMMM YYYY');
+  self.month_ten = moment().subtract(10, 'month').format('MMMM YYYY');
+  self.month_eleven = moment().subtract(11, 'month').format('MMMM YYYY');
+  self.month_twelve = moment().subtract(12, 'month').format('MMMM YYYY');
 
   // dummy user data
   self.users = [

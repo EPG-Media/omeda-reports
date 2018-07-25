@@ -38,14 +38,30 @@
       <label for="deploy_date">Deployment Date</label>
       <select name="deploy_date" ng-model="lc.query.deployment_date" ng-class="deployment_date" placeholder="*required">
         <option value="{{lc.date}}">Today ({{lc.date}})</option>
-        <option value="null"></option>
+        <option value="null">--- Past Deployments ---</option>
         <option value="{{lc.one_week_back}}">Last 7 days (since {{lc.one_week_back}})</option>
         <option value="{{lc.two_week_back}}">Last 14 days (since {{lc.two_week_back}})</option>
         <option value="{{lc.three_week_back}}">Last 21 days (since {{lc.three_week_back}})</option>
         <option value="{{lc.thirty_week_back}}">Last 30 days (since {{lc.thirty_week_back}})</option>
-        <option value="null"></option>
+        <option value="null">--- Future Deployments ---</option>
+        <option value="{{lc.one_week_out}}">Next 7 Days (by {{lc.one_week_out}})</option>
+        <option value="{{lc.two_week_out}}">Next 14 Days (by {{lc.two_week_out}})</option>
+        <option value="{{lc.three_week_out}}">Next 21 Days (by {{lc.three_week_out}})</option>
+        <option value="{{lc.thirty_week_out}}">Next 30 Days (by {{lc.thirty_week_out}})</option>
+        <option value="null">--- Monthly Deployments ---</option>
         <option value="{{lc.this_month}}">{{lc.this_month}} (This month)</option>
-        <option value="{{lc.next_month}}">{{lc.next_month}} (Next month)</option>
+        <option value="{{lc.month_one}}">{{lc.month_one}} (Next month)</option>
+        <option value="{{lc.month_two}}">{{lc.month_two}}</option>
+        <option value="{{lc.month_three}}">{{lc.month_three}}</option>
+        <option value="{{lc.month_four}}">{{lc.month_four}}</option>
+        <option value="{{lc.month_five}}">{{lc.month_five}}</option>
+        <option value="{{lc.month_six}}">{{lc.month_six}}</option>
+        <option value="{{lc.month_seven}}">{{lc.month_seven}}</option>
+        <option value="{{lc.month_eight}}">{{lc.month_eight}}</option>
+        <option value="{{lc.month_nine}}">{{lc.month_nine}}</option>
+        <option value="{{lc.month_ten}}">{{lc.month_ten}}</option>
+        <option value="{{lc.month_eleven}}">{{lc.month_eleven}}</option>
+        <option value="{{lc.month_twelve}}">{{lc.month_twelve}}</option>
       </select>
     </div>
     <!-- name contains container -->

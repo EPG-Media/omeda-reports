@@ -20,12 +20,17 @@ main {
   font-size: 0.7em;
 }
 
+/* error checking */
 .error {
-  /* background-color: rgb(222, 69, 69); */
   border: 2px solid red;
 }
 .error_reset {
   background-color: none;
+}
+
+/* select option background */
+option {
+  color: #277bc1;
 }
 
 /* tooltip img */
