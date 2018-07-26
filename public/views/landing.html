@@ -15,28 +15,28 @@
     <!-- organization container -->
     <div class="control_panel-org-container">
       <span><label for="organization">Organization</label><em class="required">*required</em></span>
-      <select name="organization" ng-model="lc.query.organization" ng-class="organization" placeholder="*required">
+      <select name="organization" ng-model="lc.query.organization" ng-class="organization">
         <option value="EPG Media">{{lc.organization}}</option>
       </select>
     </div>
     <!-- brand container -->
     <div class="control_panel-brand-container">
       <span><label for="brand">Brand</label><em class="required">*required</em></span>
-      <select name="brand" ng-model="lc.query.brand" ng-class="brand" placeholder="*required">
+      <select name="brand" ng-model="lc.query.brand" ng-class="brand">
         <option value="EPG Media Central Database">{{lc.brand}}</option>
       </select>
     </div>
     <!-- users container -->
     <div class="control_panel-brand-container">
       <span><label for="user">User</label><em class="required">*required</em></span>
-      <select name="user" ng-model="lc.query.user" ng-class="user" placeholder="*required">
+      <select name="user" ng-model="lc.query.user" ng-class="user">
         <option ng-repeat="user in lc.users" value="{{user.user_email}}">{{user.username}} - {{user.user_email}}</option>
       </select>
     </div>
     <!-- deployment date container -->
     <div class="control_panel-deploy_date-container">
       <span><label for="deploy_date">Deployment Date</label><em class="required">*required</em></span>
-      <select name="deploy_date" ng-model="lc.query.deployment_date" ng-class="deployment_date" placeholder="*required">
+      <select name="deploy_date" ng-model="lc.query.deployment_date" ng-class="deployment_date">
         <option value="all">All</option>
         <option value="{{lc.date}}">Today ({{lc.date}})</option>
         <option value="{{lc.yesturday}}">Yesturday ({{lc.yesturday}})</option>
