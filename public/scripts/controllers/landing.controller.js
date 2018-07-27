@@ -1,8 +1,9 @@
 
-myApp.controller('LandingController',['alertify', '$scope', '$http', function(alertify, $scope, $http) {
+myApp.controller('LandingController',['alertify', '$scope', '$http', '$window', function(alertify, $scope, $http, $window) {
 
   // notification that controller sourced, working and running
   console.log('Landing Controller Running...');
+  console.log($window);
 
   // defining this
   const self = this;
