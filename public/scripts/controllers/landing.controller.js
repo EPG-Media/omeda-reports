@@ -248,20 +248,20 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', '$window', 
       self.button_status = 'button_inactive';
       alertify.log('<span class="notification_span"><img class="notification_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating report </h4></span>');
 
-      // $http({
-      //   method: 'GET',
-      //   url: '/api',
-      //   headers: {
-      //     query : query
-      //   }
-      // }).then(function(response) {
-      //   alertify.success('<span class="tooltip_span"><img class="tooltip_img" src="./assets/images/logo2.png"><h4>SUCCESS - Showing query details/response</h4></span>');
-      //   self.button_status = 'button_active';
-      // }).catch(function(error) {
-      //   alertify.alert("ERROR - connecting with API");
-      //   self.button_status = 'button_active';
-      //   console.log('ERROR connecting with api', error);
-      // });
+      $http({
+        method: 'GET',
+        url: '/api',
+        headers: {
+          query : query
+        }
+      }).then(function(response) {
+        alertify.success('<span class="notification_span"><img class="notification_img" src="./assets/images/logo2.png"><h4>SUCCESS - Showing query details/response</h4></span>');
+        self.button_status = 'button_active';
+      }).catch(function(error) {
+        alertify.alert("ERROR - connecting with API");
+        self.button_status = 'button_active';
+        console.log('ERROR connecting with api', error);
+      });
 
     // end if else
     }
@@ -271,13 +271,16 @@ myApp.controller('LandingController',['alertify', '$scope', '$http', '$window', 
   // exports data to excel
   self.export = (API_response) => {
     self.excel_button_status = 'button_inactive';
-    alertify.log('<span class="notification_span"><img class="notification_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating export </h4></span>');
+    alertify.log('<span class="notification_span"><img class="notification_img" src="./assets/images/logo2.png"><h4>PROCESSING - Creating export to email: ' + self.query.user + '</h4></span>');
     $http({
       method: 'POST',
       url: '/excel_export',
-      data: API_response
+      data: API_response,
+      headers: {
+        user: self.query.user
+      }
     }).then(function(response) {
-      alertify.success('<span class="notification_span"><img class="notification_img" src="./assets/images/logo2.png"><h4>SUCCESS - Report is being emailed to you</h4></span>');
+      alertify.success('<span class="notification_span"><img class="notification_img" src="./assets/images/logo2.png"><h4>SUCCESS - Report is being emailed to ' + self.query.user + '</h4></span>');
       self.excel_button_status = 'button_active';
     }).catch(function(error) {
       alertify.alert("ERROR - exporting and mailing report. Please try again later");

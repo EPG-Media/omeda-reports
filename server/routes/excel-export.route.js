@@ -13,9 +13,11 @@ const smtpTransport = require('nodemailer-smtp-transport');
 router.post('/', function (req, res) {
 
   let API_response = req.body;
+  let user = req.headers.user;
   let today_date = new Date().toLocaleDateString();
 
-  console.log(req);
+  console.log('Sending email to users email: ', user);
+
   exportToExcel.exportXLSX({
     filename: 'KPI Report',
     sheetname: 'KPI Report',
@@ -111,7 +113,7 @@ router.post('/', function (req, res) {
   let mailOptions = {
     from:  '"Omeda Reporting App" <'+process.env.EMAIL_ADDRESS+'>', // sender address
     // from:  '"Omeda Reporting App" <'+process.env.EMAIL_ADDRESS+'>', // sender address
-    to: 'cstanton@epgmediallc.com',
+    to: user,
     subject: 'KPI Report',
     attachments: [
       {   // file on disk as an attachment

@@ -18,6 +18,7 @@ const brand = omedaApi.resources.brand;
 
 // defining server side routes
 const excel_export = require('./server/routes/excel-export.route.js');
+const api = require('./server/routes/api.route.js');
 
 // server back static files
 app.use(express.static(path.join(__dirname, './public')));
@@ -37,6 +38,7 @@ app.get('/', (req, res) => {
 
 // server side routes
 app.use('/excel_export', excel_export);
+app.use('/api', api);
 
 
 
