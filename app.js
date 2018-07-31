@@ -43,12 +43,6 @@ app.use('/api', api);
 
 
 
-
-
-
-
-
-
 // port listening
 app.listen(port, () => {
     console.log('Listening on port: ', port);
