@@ -7,6 +7,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
+// might want to use omeda api
 const omedaApi = require('omeda-api-client')({
   brandKey: 'EPG Media Central Database', // your Omeda brand/db name
   clientKey: 'client_yourclient', // your Omeda client id
